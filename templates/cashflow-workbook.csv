@@ -1,0 +1,11 @@
+Month,Category,Type,Amount,DueDate,Status,Notes
+2026-09,Client A invoice,Income,4200,2026-09-10,Expected,
+2026-09,Client B invoice,Income,2800,2026-09-18,Expected,
+2026-09,Software subscription,Expense,240,2026-09-12,Planned,
+2026-09,Payroll,Expense,5200,2026-09-15,Planned,
+2026-09,Tax reserve,Expense,3000,2026-09-30,Planned,
+2026-09,Marketing spend,Expense,800,2026-09-20,Optional,
+2026-09,Fuel and travel,Expense,420,2026-09-22,Planned,
+2026-09,Invoice 1042,Income,2300,2026-09-02,Overdue,Follow up today
+2026-09,Invoice 1091,Income,1800,2026-09-04,Overdue,Check payment status
+2026-09,Minimum reserve,Reserve,5000,2026-09-30,Target,

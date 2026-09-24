@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cash-Flow Control Kit helps freelancers and small businesses forecast cash, follow up on overdue invoices, and verify suspicious payment changes."
+    />
+    <title>Cash-Flow Control Kit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <span class="brand-mark">CF</span>
+          <span>Cash-Flow Control Kit</span>
+        </div>
+        <nav>
+          <a href="#features">Features</a>
+          <a href="#calculator">Calculator</a>
+          <a href="#templates">Templates</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">AI-assisted financial operations</span>
+            <h1>Know before your business runs short of cash.</h1>
+            <p>
+              Built for freelancers, agencies, consultants, and small service businesses
+              that need a clear view of cash risk, late invoices, and suspicious payment changes.
+            </p>
+            <div class="cta-row">
+              <a class="primary-btn" href="#calculator">Try the calculator</a>
+              <a class="secondary-btn" href="#templates">See the templates</a>
+            </div>
+            <ul class="mini-points">
+              <li>Forecast 30-day cash balance</li>
+              <li>Track overdue payment follow-ups</li>
+              <li>Pause and verify unusual payment requests</li>
+            </ul>
+          </div>
+
+          <div class="hero-panel">
+            <div class="panel-card">
+              <p class="panel-label">Current operating view</p>
+              <div class="money-line">
+                <span>Projected cash</span>
+                <strong id="heroCash">$0</strong>
+              </div>
+              <div class="money-line muted">
+                <span>Cash risk</span>
+                <strong id="heroRisk">Low</strong>
+              </div>
+              <div class="mini-meter">
+                <div id="riskMeter" class="meter-fill"></div>
+              </div>
+              <div class="stat-grid">
+                <div>
+                  <label>Incoming</label>
+                  <strong id="heroIncoming">$0</strong>
+                </div>
+                <div>
+                  <label>Outgoing</label>
+                  <strong id="heroOutgoing">$0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip">
+        <div class="container trust-grid">
+          <div>Cash-flow visibility</div>
+          <div>Overdue invoice triage</div>
+          <div>Payment-change verification</div>
+          <div>Human-reviewed decisions</div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">What it helps with</span>
+            <h2>Operational clarity without the full-time finance department.</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon">01</div>
+              <h3>Cash forecast</h3>
+              <p>
+                Estimate the next 7, 30, and 90 days of available cash using your own assumptions.
+              </p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">02</div>
+              <h3>Invoice follow-up</h3>
+              <p>
+                Prioritize overdue invoices and draft professional follow-up messages in seconds.
+              </p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">03</div>
+              <h3>Fraud review</h3>
+              <p>
+                Pause unusual payment instructions, confirm bank details, and record verification steps.
+              </p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">04</div>
+              <h3>Weekly finance briefing</h3>
+              <p>
+                Summarize upcoming pressure points, available cash, and follow-up actions every week.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="calculator" class="section alt-bg">
+        <div class="container calc-layout">
+          <div class="section-header compact">
+            <span class="eyebrow">Interactive planner</span>
+            <h2>30-day cash-risk snapshot</h2>
+          </div>
+
+          <div class="calc-grid">
+            <form id="cashForm" class="calc-form">
+              <div class="field-row two-up">
+                <label>
+                  Opening cash
+                  <input type="number" id="openingCash" value="25000" step="100" />
+                </label>
+                <label>
+                  Tax reserve
+                  <input type="number" id="taxReserve" value="3000" step="100" />
+                </label>
+              </div>
+
+              <div class="field-row two-up">
+                <label>
+                  Expected incoming cash
+                  <input type="number" id="incomingCash" value="18000" step="100" />
+                </label>
+                <label>
+                  Planned outgoing cash
+                  <input type="number" id="outgoingCash" value="21000" step="100" />
+                </label>
+              </div>
+
+              <div class="field-row two-up">
+                <label>
+                  Overdue invoice total
+                  <input type="number" id="overdueInvoices" value="6200" step="100" />
+                </label>
+                <label>
+                  Minimum cash reserve
+                  <input type="number" id="minimumReserve" value="5000" step="100" />
+                </label>
+              </div>
+
+              <div class="field-row two-up">
+                <label>
+                  Client concentration risk (%)
+                  <input type="number" id="clientConcentration" value="45" min="0" max="100" />
+                </label>
+                <label>
+                  Repeated late payment risk (%)
+                  <input type="number" id="latePaymentRisk" value="35" min="0" max="100" />
+                </label>
+              </div>
+
+              <div class="field-row">
+                <label>
+                  Suspicious payment request detected?
+                  <select id="suspiciousRequest">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                  </select>
+                </label>
+              </div>
+
+              <button type="submit" class="primary-btn block-btn">Update forecast</button>
+            </form>
+
+            <aside class="result-panel">
+              <div class="result-box result-positive" id="riskCard">
+                <span class="result-label">Risk level</span>
+                <h3 id="riskLabel">Watch closely</h3>
+                <p id="riskText">Projected cash is adequate but sensitive to invoice delays.</p>
+              </div>
+
+              <div class="summary-grid">
+                <div>
+                  <span>Projected balance</span>
+                  <strong id="projectedBalance">$0</strong>
+                </div>
+                <div>
+                  <span>Shortfall</span>
+                  <strong id="cashShortfall">$0</strong>
+                </div>
+                <div>
+                  <span>Buffer</span>
+                  <strong id="cashBuffer">$0</strong>
+                </div>
+                <div>
+                  <span>Priority action</span>
+                  <strong id="priorityAction">Follow up</strong>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="templates" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Starter product kit</span>
+            <h2>Ready-to-use templates</h2>
+          </div>
+
+          <div class="template-grid">
+            <article class="template-card">
+              <h3>Cash-flow workbook</h3>
+              <p>Track income, expenses, invoices, and recurring obligations with a simple workbook layout.</p>
+              <a href="templates/cashflow-workbook.csv" download>Download CSV</a>
+            </article>
+            <article class="template-card">
+              <h3>Invoice follow-up library</h3>
+              <p>Professional templates for reminder, overdue, and escalation messages.</p>
+              <a href="templates/invoice-followup-templates.md" download>Download markdown</a>
+            </article>
+            <article class="template-card">
+              <h3>Payment verification checklist</h3>
+              <p>Pause, verify, record, and approve any unusual payment or bank-detail change.</p>
+              <a href="templates/payment-verification-checklist.md" download>Download markdown</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq-section">
+        <div class="container narrow">
+          <div class="section-header compact">
+            <span class="eyebrow">FAQ</span>
+            <h2>Is this a fintech app?</h2>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Is this meant to replace an accountant?</h3>
+              <p>No. It is a planning and operations aid for better visibility and process discipline.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Does it guarantee fraud detection?</h3>
+              <p>No. It helps identify risk and documents a verification process, but important decisions still require human review.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Who is this for?</h3>
+              <p>Freelancers, agencies, consultants, and small service businesses with irregular income, invoice cycles, and payment risk.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>Cash-Flow Control Kit</div>
+        <div>Operational planning support, not investment or tax advice.</div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
